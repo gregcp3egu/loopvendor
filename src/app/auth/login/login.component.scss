@@ -1,0 +1,47 @@
+:host .full-hieght{
+    height: 100%;
+}
+
+:host ion-item{ 
+    padding-left: 0 !important;
+}
+
+.item-native{ 
+    padding-left: 0 !important;
+}
+
+:host .reset{
+    float: right;
+    margin-top: .4rem !important;
+}
+
+:host .log{
+    margin-top: 1rem;
+}
+
+input:focus, input {
+    border: 0 !important;
+}
+
+
+.reg{
+    position: fixed;
+    bottom: .5rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.logo{
+    height: 90px;
+    margin: auto;
+}
+
+.logo_cover{
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+:host ion-thumbnail{
+    width: 100%;
+}

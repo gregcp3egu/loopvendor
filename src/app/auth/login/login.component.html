@@ -1,0 +1,35 @@
+<ion-content padding>
+  <ion-grid class="full-hieght">
+    <ion-row class="full-hieght">
+      <ion-col align-self-center>
+        <div class="logo_cover">
+            <img class="logo" src="https://c2.staticflickr.com/4/3571/3688160457_346bc01aa0.jpg">
+        </div>
+        
+        <form [formGroup]="form" (ngSubmit)="login()">
+          <ion-item no-padding> 
+              <ion-label position="floating">Email</ion-label>
+            <ion-input formControlName="email" required type="email"></ion-input>
+          </ion-item>
+
+          <ion-item no-padding>
+              <ion-label  position="floating">Password</ion-label>
+            <ion-input formControlName="password" required type="password"></ion-input>
+          </ion-item>
+          <a class="text-info" class="reset" [routerLink]="['/auth/resetpassword']">Forgot password?</a>
+          
+          <br>
+          <br>
+
+          <ion-button class="log" [disabled]="form.invalid || loading" (click)="login()" expand="block">Login</ion-button>
+
+
+        </form>
+
+      </ion-col>
+
+      <p class="reg text-center">Don't have an account? <a class="text-default" [routerLink]="['/auth/register']">create account</a></p>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

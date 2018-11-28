@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Products</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullheight padding light>
+  <form [formGroup]="form">
+    <ion-button margin-top [disabled]="loading" (click)="create()" color="success" expand="block">Create Product</ion-button>
+  </form>
+  <ion-card (click)="goToDetail(item)">
+    <ion-item>
+      <ion-icon name="pizza"></ion-icon>
+      <ion-label>Chips</ion-label>
+      <ion-button fill="outline" slot="end">View</ion-button>
+    </ion-item>
+    <img src="https://images.freeimages.com/images/large-previews/2b6/food-18-1323940.jpg">
+    <ion-card-content>
+      <ion-icon name="pricetag"></ion-icon>
+      $2.50
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card (click)="goToDetail(item)">
+    <ion-item>
+      <ion-icon name="pizza"></ion-icon>
+      <ion-label>Burgers</ion-label>
+      <ion-button fill="outline" slot="end">View</ion-button>
+    </ion-item>
+    <img src="https://images.freeimages.com/images/large-previews/85c/big-burger-1561088.jpg">
+    <ion-card-content>
+      <ion-icon name="pricetag"></ion-icon>
+      $5.00
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card (click)="goToDetail(item)">
+    <ion-item>
+      <ion-icon name="pizza"></ion-icon>
+      <ion-label>Chicken Wings</ion-label>
+      <ion-button fill="outline" slot="end">View</ion-button>
+    </ion-item>
+    <img src="https://images.freeimages.com/images/large-previews/d32/hot-spicy-wings-1324961.jpg">
+    <ion-card-content>
+      <ion-icon name="pricetag"></ion-icon>
+      $7.00
+    </ion-card-content>
+
+  </ion-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ion-content>

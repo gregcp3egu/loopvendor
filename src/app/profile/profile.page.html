@@ -1,0 +1,125 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid *ngIf="error" class="full-hieght">
+    <ion-row class="full-hieght">
+      <ion-col align-self-center>
+        <h4 class="text-success text-center">{{error}}</h4>
+        <ion-button color="danger" (click)="signout()" expand="block">sign out</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="full-height">
+    <ion-row class="full-hieght">
+      <ion-col>
+        <div class="img-holder mx-auto">
+          <img src="https://images.freeimages.com/images/large-previews/e7b/up-close-personal-1-1359483.jpg">
+        </div>
+
+        <form [formGroup]="form">
+        <ion-toolbar>
+          <ion-title>Personal details</ion-title>
+        </ion-toolbar>
+        <ion-item margin-top no-padding>
+          <ion-label position="floating">First Name</ion-label>
+          <ion-input formControlName="first_name" type="text"></ion-input>
+        </ion-item>
+        <ion-item margin-top no-padding>
+          <ion-label position="floating">Last Name</ion-label>
+          <ion-input formControlName="last_name" type="text"></ion-input>
+        </ion-item>
+        <ion-item margin-top no-padding>
+          <ion-label position="floating">Email Address</ion-label>
+          <ion-input formControlName="email_address" type="email"></ion-input>
+        </ion-item>
+        <ion-item margin-top no-padding>
+            <ion-label position="floating">Website</ion-label>
+            <ion-input formControlName="website" type="text"></ion-input>
+        </ion-item>
+        <ion-item margin-top no-padding>
+            <ion-label position="floating">Facebook</ion-label>
+            <ion-input formControlName="facebook_link" type="text"></ion-input>
+        </ion-item>
+        <ion-item margin-top no-padding>
+            <ion-label position="floating">Twitter</ion-label>
+            <ion-input formControlName="twitter_link" type="text"></ion-input>
+        </ion-item>
+
+        <ion-toolbar margin-top>
+          <ion-title>Shop Detail</ion-title>
+        </ion-toolbar>
+
+        <ion-item margin-top no-padding>
+            <ion-label position="floating">Shop Name</ion-label>
+            <ion-input formControlName="name" type="text"></ion-input>
+        </ion-item>
+
+        <!-- Show only ward for councillors _id: 5b8ff978d3f5e5189c9b06e9 -->
+        <!--
+        <ion-item margin-top no-padding *ngIf="profile.position_id._id == '5b8ff978d3f5e5189c9b06e9'">
+            <ion-label position="floating">Ward</ion-label>
+            <ion-input formControlName="profile.admin_ward.name" disabled type="text"></ion-input>
+        </ion-item>
+
+        <ng-container *ngIf="profile.position_id._id != '5b8ff978d3f5e5189c9b06e9'">
+            <ion-item margin-top no-padding>
+                <ion-label position="floating">Parliamentary Constituency</ion-label>
+                <ion-input formControlName="profile.parliamentary_constituency.name" disabled type="text"></ion-input>
+            </ion-item>
+
+            <ion-item margin-top no-padding *ngFor="let c of profile.admin_county">
+                <ion-label position="floating">County</ion-label>
+                <ion-input formControlName="c.name" disabled type="text"></ion-input>
+            </ion-item>
+
+            <ion-item margin-top no-padding *ngFor="let c of profile.admin_district">
+                <ion-label position="floating">District</ion-label>
+                <ion-input formControlName="c.name" disabled type="text"></ion-input>
+            </ion-item>
+
+            <ion-item margin-top no-padding>
+                <ion-label position="floating">Parish</ion-label>
+                <ion-input formControlName="profile.parish.name" disabled type="text"></ion-input>
+            </ion-item>
+            
+        </ng-container>
+        -->
+        <ion-toolbar margin-top>
+            <ion-title>Address Details</ion-title>
+            <ion-input formControlName="address" type="text"></ion-input>
+          </ion-toolbar>
+
+        <ion-item margin-top no-padding>
+            <ion-label position="floating">Building / Number</ion-label>
+            <ion-input formControlName="number" type="text"></ion-input>
+            
+        </ion-item>
+
+        <ion-item margin-top no-padding>
+            <ion-label position="floating">Street</ion-label>
+            <ion-input formControlName="street" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item margin-top no-padding>
+            <ion-label position="floating">Postcode</ion-label>
+            <ion-input formControlName="postcode" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item margin-top no-padding>
+            <ion-label position="floating">Country</ion-label>
+            <ion-input formControlName="country" type="text"></ion-input>
+        </ion-item>
+
+        <ion-button margin-top [disabled]="loading" color="success" expand="block" (click)="claim()">Accept Terms & Claim Profile</ion-button>
+        
+      </form>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

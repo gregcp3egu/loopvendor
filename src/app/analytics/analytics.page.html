@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Analytics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card class="numbs_" margin>
+    <ion-card-content class="ico_">
+      <ion-icon size="large" name="pricetags"></ion-icon>
+    </ion-card-content>
+
+    <ion-card-header>
+      <ion-card-subtitle>Products</ion-card-subtitle>
+      <ion-card-title>98</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card class="numbs_" margin>
+    <ion-card-content class="ico_">
+      <ion-icon size="large" name="cash"></ion-icon>
+    </ion-card-content>
+
+    <ion-card-header>
+      <ion-card-subtitle>Sales</ion-card-subtitle>
+      <ion-card-title>40</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card class="numbs_" margin>
+    <ion-card-content class="ico_">
+      <ion-icon size="large" name="locate"></ion-icon>
+    </ion-card-content>
+
+    <ion-card-header>
+      <ion-card-subtitle>Current location</ion-card-subtitle>
+      <ion-card-title>Newcastle</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+
+  <ion-card>
+    <ngx-charts-bar-vertical 
+
+      [scheme]="colorScheme" 
+      [results]="data" 
+      [gradient]="gradient" [xAxis]="showXAxis"
+      [yAxis]="showYAxis" [legend]="showLegend" 
+      [showXAxisLabel]="showXAxisLabel" 
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel" 
+      [yAxisLabel]="yAxisLabel" (select)="onSelect($event)">
+    </ngx-charts-bar-vertical>
+  </ion-card>
+
+
+</ion-content>
