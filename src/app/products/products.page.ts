@@ -46,6 +46,10 @@ export class ProductsPage implements OnInit {
   create(){
     this.router.navigateByUrl(`tabs/(products:create)`)
   }
+
+  view(_id){
+    this.router.navigateByUrl(`tabs/(products:view/${_id})`)
+  }
   
 
   createForm(){

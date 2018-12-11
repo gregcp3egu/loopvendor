@@ -5,11 +5,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
- selector: 'app-create',
- templateUrl: './create.component.html',
- styleUrls: ['./create.component.scss']
+  selector: 'app-view',
+  templateUrl: './view.component.html',
+  styleUrls: ['../create/create.component.scss']
 })
-export class CreateComponent implements OnInit {
+export class ViewComponent implements OnInit {
   main_loading: boolean;
   error;
   product = {};
@@ -55,16 +55,6 @@ export class CreateComponent implements OnInit {
       description: ['', Validators.required],
       allergy_info: ['', Validators.required],
     })
-  }
-
-  async presentLoadingWithOptions() {
-    const loading = await this.loadingController.create({
-      duration: 10000,
-      keyboardClose: true,
-      message: 'checking for product',
-      translucent: true,
-    });
-    return await loading.present();
   }
 
 }

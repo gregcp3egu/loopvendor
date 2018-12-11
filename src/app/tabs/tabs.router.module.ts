@@ -13,6 +13,7 @@ import { SalesPage } from '../sales/sales.page';
 import { ProfilePage } from '../profile/profile.page';
 import { EditProfileComponent } from '../profile/edit-profile/edit-profile.component';
 import { CreateComponent } from '../products/create/create.component';
+import { ViewComponent } from '../products/view/view.component';
 
 const routes: Routes = [
   {
@@ -60,6 +61,11 @@ const routes: Routes = [
       { path: 'create',
         outlet: 'products',
         component: CreateComponent
+        //loadChildren: '../products/products.module#ProductsPageModule'
+      },
+      { path: 'view/:id',
+        outlet: 'products',
+        component: ViewComponent
         //loadChildren: '../products/products.module#ProductsPageModule'
       },
       { path: 'sales',

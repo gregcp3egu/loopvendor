@@ -17,116 +17,62 @@
   <ion-grid class="full-height">
     <ion-row class="full-hieght">
       <ion-col>
-        <div class="img-holder mx-auto">
-          <img [src]="profile.profile_picture.path">
-        </div>
 
         <form [formGroup]="form">
         <!--<ion-toolbar>
           <ion-title></ion-title>
         </ion-toolbar>-->
-        <ion-item margin-top no-padding>
-          <ion-label position="floating">Product Name</ion-label>
-          <ion-input formControlName="product_name" type="text"></ion-input>
-        </ion-item>
-        <ion-item margin-top no-padding>
-          <ion-label position="floating">Price</ion-label>
-          <ion-input formControlName="product_price" type="text"></ion-input>
-        </ion-item>
-        <ion-item margin-top no-padding>
-          <ion-label position="floating">Description</ion-label>
-          <ion-input formControlName="product_description" type="text"></ion-input>
+        <div class="box2" *ngIf="newSrc">
+            <img [src]="newSrc">
+            <ion-icon name="camera" class="chn" (click)="f.click()" size="large" color="primary"></ion-icon>
+        </div>
+
+        <div class="box" (click)="f.click()"  *ngIf="!newSrc">
+            <ion-icon name="camera" size="large"></ion-icon>
+            <ion-text><h4>Add Image</h4></ion-text>
+        </div>
+
+        <ion-item class="nodisp">
+            <ion-label id="profile_image" color="primary" stacked>Product Image</ion-label>
+            <input type="file" #f accept="image/*" (change)="imageChange($event)">
         </ion-item>
 
-        <ion-item>
-            <ion-label id="profile_image" color="primary" stacked>Product</ion-label>
-            <ion-input type="file" accept="image/*" (change)="changeListener($event)"></ion-input>
-        </ion-item>
-        <!--
-        <ion-item margin-top no-padding>
-          <ion-label position="floating">Email Address</ion-label>
-          <ion-input formControlName="profile.email_address" disabled type="email"></ion-input>
-        </ion-item>
-        <ion-item margin-top no-padding>
-            <ion-label position="floating">Website</ion-label>
-            <ion-input formControlName="profile.website" disabled type="text"></ion-input>
-        </ion-item>
-        <ion-item margin-top no-padding>
-            <ion-label position="floating">Facebook</ion-label>
-            <ion-input formControlName="profile.facebook_link" disabled type="text"></ion-input>
-        </ion-item>
-        <ion-item margin-top no-padding>
-            <ion-label position="floating">Twitter</ion-label>
-            <ion-input formControlName="profile.twitter_link" disabled type="text"></ion-input>
-        </ion-item>
-      -->
-      <!--  
-        <ion-toolbar margin-top>
-          <ion-title>Shop Detail</ion-title>
-        </ion-toolbar>
 
         <ion-item margin-top no-padding>
-            <ion-label position="floating">Shop Name</ion-label>
-            <ion-input formControlName="profile.position_id.name" disabled type="text"></ion-input>
+          <ion-label position="stacked">Product Name</ion-label>
+          <ion-input formControlName="name" type="text"></ion-input>
         </ion-item>
-        -->
-        <!-- Show only ward for councillors _id: 5b8ff978d3f5e5189c9b06e9 -->
-        <!--
-        <ion-item margin-top no-padding *ngIf="profile.position_id._id == '5b8ff978d3f5e5189c9b06e9'">
-            <ion-label position="floating">Ward</ion-label>
-            <ion-input formControlName="profile.admin_ward.name" disabled type="text"></ion-input>
-        </ion-item>
-
-        <ng-container *ngIf="profile.position_id._id != '5b8ff978d3f5e5189c9b06e9'">
-            <ion-item margin-top no-padding>
-                <ion-label position="floating">Parliamentary Constituency</ion-label>
-                <ion-input formControlName="profile.parliamentary_constituency.name" disabled type="text"></ion-input>
-            </ion-item>
-
-            <ion-item margin-top no-padding *ngFor="let c of profile.admin_county">
-                <ion-label position="floating">County</ion-label>
-                <ion-input formControlName="c.name" disabled type="text"></ion-input>
-            </ion-item>
-
-            <ion-item margin-top no-padding *ngFor="let c of profile.admin_district">
-                <ion-label position="floating">District</ion-label>
-                <ion-input formControlName="c.name" disabled type="text"></ion-input>
-            </ion-item>
-
-            <ion-item margin-top no-padding>
-                <ion-label position="floating">Parish</ion-label>
-                <ion-input formControlName="profile.parish.name" disabled type="text"></ion-input>
-            </ion-item>
-            
-        </ng-container>
-        -->
-        <!--
-        <ion-toolbar margin-top>
-            <ion-title>Address Details</ion-title>
-          </ion-toolbar>
-
         <ion-item margin-top no-padding>
-            <ion-label position="floating">Building / Number</ion-label>
-            <ion-input formControlName="profile.address.number" disabled type="text"></ion-input>
+          <ion-label position="stacked">Price</ion-label>
+          <ion-input formControlName="price" type="number"></ion-input>
+        </ion-item>
+        <ion-item margin-top no-padding>
+          <ion-label position="stacked">Description</ion-label>
+          <ion-textarea 
+          rows="4" 
+          cols="20" 
+          formControlName="description" 
+          type="text"
+          placeholder="Short product description"
+          ></ion-textarea>
         </ion-item>
 
         <ion-item margin-top no-padding>
-            <ion-label position="floating">Street</ion-label>
-            <ion-input formControlName="profile.address.street" disabled type="text"></ion-input>
-        </ion-item>
+            <ion-label position="stacked">Allergy Information</ion-label>
+            <ion-textarea 
+            rows="4" 
+            cols="20" 
+            formControlName="allergy_info" 
+            type="text"
+            placeholder="Short allergy information"
+            ></ion-textarea>
+          </ion-item>
 
-        <ion-item margin-top no-padding>
-            <ion-label position="floating">Postcode</ion-label>
-            <ion-input formControlName="profile.address.postcode" disabled type="text"></ion-input>
-        </ion-item>
+          <ion-button margin-top 
+          expand="block"
+          color="success">Add Product</ion-button>
 
-        <ion-item margin-top no-padding>
-            <ion-label position="floating">Country</ion-label>
-            <ion-input formControlName="profile.country.name" disabled type="text"></ion-input>
-        </ion-item>
-
-        <ion-button margin-top [disabled]="loading" color="success" expand="block" (click)="claim()">Add product</ion-button>
-        -->
+        
       </form>
 
       </ion-col>

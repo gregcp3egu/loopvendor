@@ -1,0 +1,38 @@
+.box {
+    background-color: white;
+    outline: 2px dashed #9c9c9c;
+    outline-offset: -10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    position: relative;
+  }
+
+  .box2 {
+    background-color: white;
+    outline-offset: -10px;
+    min-height: 200px;
+    max-height: 275px;
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    position: relative;
+  }
+
+  .chn{
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+  }
+ 
+
+  .nodisp{
+      display: none;
+      height: 0;
+      width: 0;
+  }

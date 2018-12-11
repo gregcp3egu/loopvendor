@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Product: Burger</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-grid *ngIf="error" class="full-hieght">
+      <ion-row class="full-hieght">
+        <ion-col align-self-center>
+          <h4 class="text-success text-center">{{error}}</h4>
+          <ion-button color="danger" (click)="signout()" expand="block">sign out</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <ion-grid class="full-height">
+      <ion-row class="full-hieght">
+        <ion-col>
+          
+  
+          <form [formGroup]="form">
+          <!--<ion-toolbar>
+            <ion-title></ion-title>
+          </ion-toolbar>-->
+          <div class="box2">
+              <img src="https://images.freeimages.com/images/large-previews/85c/big-burger-1561088.jpg">
+              <ion-icon name="camera" class="chn" (click)="f.click()" size="large" color="primary"></ion-icon>
+          </div>
+  
+  
+          <ion-item class="nodisp">
+              <ion-label id="profile_image" color="primary" stacked>Product Image</ion-label>
+              <input type="file" #f accept="image/*" (change)="imageChange($event)">
+          </ion-item>
+  
+  
+          <ion-item margin-top no-padding>
+            <ion-label position="stacked">Product Name</ion-label>
+            <ion-input formControlName="name" type="text"></ion-input>
+          </ion-item>
+          <ion-item margin-top no-padding>
+            <ion-label position="stacked">Price</ion-label>
+            <ion-input formControlName="price" type="number"></ion-input>
+          </ion-item>
+          <ion-item margin-top no-padding>
+            <ion-label position="stacked">Description</ion-label>
+            <ion-textarea 
+            rows="4" 
+            cols="20" 
+            formControlName="description" 
+            type="text"
+            placeholder="Short product description"
+            ></ion-textarea>
+          </ion-item>
+  
+          <ion-item margin-top no-padding>
+              <ion-label position="stacked">Allergy Information</ion-label>
+              <ion-textarea 
+              rows="4" 
+              cols="20" 
+              formControlName="allergy_info" 
+              type="text"
+              placeholder="Short allergy information"
+              ></ion-textarea>
+            </ion-item>
+  
+            <ion-button margin-top 
+            expand="block"
+            color="success">Update Product</ion-button>
+
+            <ion-button margin-top 
+            expand="block"
+            color="primary">View Analytics</ion-button>
+  
+          
+        </form>
+  
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  
+  

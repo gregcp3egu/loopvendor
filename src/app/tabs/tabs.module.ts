@@ -18,6 +18,7 @@ import { SalesPageModule } from '../sales/sales.module';
 import { ProfilePageModule } from '../profile/profile.module';
 import { EditProfileComponent } from '../profile/edit-profile/edit-profile.component';
 import { CreateComponent } from '../products/create/create.component';
+import { ViewComponent } from '../products/view/view.component';
 
 @NgModule({
   imports: [
@@ -37,6 +38,10 @@ import { CreateComponent } from '../products/create/create.component';
     ReactiveFormsModule,
 
   ],
-  declarations: [TabsPage, EditProfileComponent, CreateComponent]
+  declarations: [
+    TabsPage, 
+    EditProfileComponent, 
+    CreateComponent,
+  ViewComponent]
 })
 export class TabsPageModule {}

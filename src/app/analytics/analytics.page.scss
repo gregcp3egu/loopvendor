@@ -10,3 +10,7 @@
     justify-content: center;
     align-items: center;
 }
+
+ngx-charts-bar-vertical, :host ngx-charts-bar-vertical{
+    max-width: 100% !important;
+}

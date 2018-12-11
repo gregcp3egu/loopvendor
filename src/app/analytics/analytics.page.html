@@ -40,18 +40,26 @@
   </ion-card>
 
 
-  <ion-card>
-    <ngx-charts-bar-vertical 
+  <ion-card padding-top>
+    <ion-card-content>
 
-      [scheme]="colorScheme" 
-      [results]="data" 
-      [gradient]="gradient" [xAxis]="showXAxis"
-      [yAxis]="showYAxis" [legend]="showLegend" 
-      [showXAxisLabel]="showXAxisLabel" 
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel" 
-      [yAxisLabel]="yAxisLabel" (select)="onSelect($event)">
-    </ngx-charts-bar-vertical>
+
+      <ngx-charts-bar-vertical 
+        [legend]="true" 
+        [view]="view" 
+        [legendTitle]="'Sales'" 
+        [legendPosition]="'below'"
+        [scheme]="colorScheme" 
+        [results]="data" 
+        [gradient]="gradient" 
+        [xAxis]="showXAxis" 
+        [yAxis]="showYAxis" 
+        [legend]="showLegend"
+        [showXAxisLabel]="showXAxisLabel" 
+        [showYAxisLabel]="showYAxisLabel" 
+        [yAxisLabel]="yAxisLabel" (select)="onSelect($event)">
+      </ngx-charts-bar-vertical>
+    </ion-card-content>
   </ion-card>
 
 

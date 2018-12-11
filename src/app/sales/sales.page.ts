@@ -12,4 +12,8 @@ export class SalesPage implements OnInit {
   ngOnInit() {
   }
 
+  segmentChanged(e){
+    console.log(e)
+  }
+
 }

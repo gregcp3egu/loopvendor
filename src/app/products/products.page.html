@@ -7,11 +7,11 @@
   <form [formGroup]="form">
     <ion-button margin-top [disabled]="loading" (click)="create()" color="success" expand="block">Create Product</ion-button>
   </form>
-  <ion-card (click)="goToDetail(item)">
+  <ion-card>
     <ion-item>
       <ion-icon name="pizza"></ion-icon>
       <ion-label>Chips</ion-label>
-      <ion-button fill="outline" slot="end">View</ion-button>
+      <ion-button fill="outline" slot="end"  (click)="view('id')">View</ion-button>
     </ion-item>
     <img src="https://images.freeimages.com/images/large-previews/2b6/food-18-1323940.jpg">
     <ion-card-content>
@@ -21,11 +21,11 @@
 
   </ion-card>
 
-  <ion-card (click)="goToDetail(item)">
+  <ion-card>
     <ion-item>
       <ion-icon name="pizza"></ion-icon>
       <ion-label>Burgers</ion-label>
-      <ion-button fill="outline" slot="end">View</ion-button>
+      <ion-button fill="outline" slot="end" (click)="view('id')">View</ion-button>
     </ion-item>
     <img src="https://images.freeimages.com/images/large-previews/85c/big-burger-1561088.jpg">
     <ion-card-content>
@@ -35,7 +35,7 @@
 
   </ion-card>
 
-  <ion-card (click)="goToDetail(item)">
+  <ion-card>
     <ion-item>
       <ion-icon name="pizza"></ion-icon>
       <ion-label>Chicken Wings</ion-label>

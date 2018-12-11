@@ -9,12 +9,12 @@ export class AnalyticsPage implements OnInit {
 
   data = [
     {
-      "name": "Germany",
-      "value": 90
+      "name": "Sales",
+      "value": 800
     },
     {
-      "name": "USA",
-      "value": 50
+      "name": "Views",
+      "value": 1000
     }
   ];
 
@@ -25,9 +25,10 @@ export class AnalyticsPage implements OnInit {
   gradient = false;
   showLegend = true;
   showXAxisLabel = true;
-  xAxisLabel = 'Country';
+  // xAxisLabel = 'Item';
   showYAxisLabel = true;
-  yAxisLabel = 'Population';
+  yAxisLabel = '';
+  view = [320];
 
   colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']

@@ -1,0 +1,23 @@
+.details{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item{
+    width: 50% !important;
+    height: 130px;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.item:nth-child(odd){
+    border-right: 1px solid grey;
+}
+
+.item div{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

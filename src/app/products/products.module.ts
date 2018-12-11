@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ProductsPage } from './products.page';
 import { SharedModule } from '../shared/shared.module';
+
 // import { CreateComponent } from './create/create.component';
 
 const routes: Routes = [
