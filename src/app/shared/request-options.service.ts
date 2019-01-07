@@ -12,13 +12,13 @@ import { Observable, throwError } from 'rxjs';
 export class RequestOptionsService {
 
   //live
-  // baseurl = `https://ryl.herokuapp.com/leader/secure`;
-  // publicurl = `https://ryl.herokuapp.com/public`;
+  baseurl = `https://loopserve-api.herokuapp.com/trader/secure`;
+  publicurl = `https://loopserve-api.herokuapp.com/public`;
 
   //test
-  baseurl = `http://10.150.96.64:8080/trader`;
-  secureurl = `http://10.150.96.64:8080/trader/secure`;
-  publicurl = `http://10.150.96.64:8080/public`;
+  // baseurl = `http://10.150.96.64:8080/trader`;
+  // secureurl = `http://10.150.96.64:8080/trader/secure`;
+  // publicurl = `http://10.150.96.64:8080/public`;
   
   constructor(public http: HttpClient){}
 
