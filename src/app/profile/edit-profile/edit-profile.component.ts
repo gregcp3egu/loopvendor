@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-edit-profile',
@@ -15,8 +16,12 @@ export class EditProfileComponent implements OnInit {
   form: FormGroup;
   loading: boolean;
 
-  constructor(private fb: FormBuilder, private route: ActivatedRoute,
-    public loadingController: LoadingController, private router: Router
+  constructor(
+    private fb: FormBuilder, 
+    private route: ActivatedRoute,
+    public loadingController: LoadingController, 
+    private router: Router,
+    private as: AuthService
   ) { }
 
   ngOnInit() {
@@ -40,6 +45,11 @@ export class EditProfileComponent implements OnInit {
 
     })
   }
+
+  logOut(){
+    this.as.signOut()
+  }
+
   async presentLoadingWithOptions() {
     const loading = await this.loadingController.create({
       duration: 10000,
@@ -49,5 +59,6 @@ export class EditProfileComponent implements OnInit {
     });
     return await loading.present();
   }
+
 }
 

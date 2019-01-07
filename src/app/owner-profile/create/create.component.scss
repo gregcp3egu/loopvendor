@@ -1,0 +1,23 @@
+.pro{
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    margin: auto;
+}
+
+.img-holder{
+    display: flex;
+}
+
+.icon{
+    height: 230px;
+    width: 230px;
+    margin: auto;
+}
+
+:host .slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

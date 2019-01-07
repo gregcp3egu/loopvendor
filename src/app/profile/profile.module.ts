@@ -10,10 +10,10 @@ import { ProfilePage } from './profile.page';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: ProfilePage
-  }
+  // {
+  //   path: '',
+  //   component: EditProfileComponent
+  // }
 ];
 
 @NgModule({
@@ -24,6 +24,9 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     ReactiveFormsModule
   ],
-  declarations: [ProfilePage]
+  declarations: [ ProfilePage],
+  exports: [
+    ProfilePage
+  ]
 })
 export class ProfilePageModule {}

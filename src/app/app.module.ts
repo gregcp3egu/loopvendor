@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { IonicStorageModule } from '@ionic/storage';
 import { RouteReuseStrategy } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
@@ -21,27 +22,36 @@ import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 import { AuthGuard } from './auth.guard';
 import { AuthInterceptor } from './auth.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProfilePageModule } from './profile/profile.module';
+
+import { ActionSheet } from '@ionic-native/action-sheet/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-    BrowserModule, 
-    IonicModule.forRoot(), 
+    BrowserModule,
+    IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     HttpClientModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
+    ProfilePageModule,
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+      driverOrder: ['indexeddb', 'sqlite', 'websql']
+    })
+
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     AuthService,
-    QRScanner, 
+    QRScanner,
     AuthGuard,
     {
       provide: HTTP_INTERCEPTORS,
@@ -49,7 +59,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       multi: true
     },
     RequestOptionsService,
+    Camera,
+    ActionSheet
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

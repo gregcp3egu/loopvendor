@@ -12,8 +12,13 @@ import { Observable, throwError } from 'rxjs';
 export class RequestOptionsService {
 
   //live
-  baseurl = `https://ryl.herokuapp.com/leader/secure`;
-  publicurl = `https://ryl.herokuapp.com/public`
+  // baseurl = `https://ryl.herokuapp.com/leader/secure`;
+  // publicurl = `https://ryl.herokuapp.com/public`;
+
+  //test
+  baseurl = `http://10.150.96.64:8080/trader`;
+  secureurl = `http://10.150.96.64:8080/trader/secure`;
+  publicurl = `http://10.150.96.64:8080/public`;
   
   constructor(public http: HttpClient){}
 
@@ -40,6 +45,8 @@ export class RequestOptionsService {
   }
 
   handleError (res: Response | any | object) {
+    console.log(res);
+    
     let errMsg: string;
     if(res.status == 0){
       return throwError(

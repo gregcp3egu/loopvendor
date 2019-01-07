@@ -8,7 +8,7 @@ import { map, take, tap } from 'rxjs/operators'
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard implements CanActivate {
+export class SlidesGuard implements CanActivate {
 
   constructor(private as: AuthService, private router: Router) { }
 
@@ -35,8 +35,10 @@ export class AuthGuard implements CanActivate {
         return !!user
       }),
       tap(async loggedIn => {
-        if (!loggedIn) {
-          this.router.navigate(['/slides']);
+        if (loggedIn) {
+          console.log(loggedIn);
+          
+          this.router.navigate(['/']);
           return false
         }
 

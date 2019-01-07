@@ -1,0 +1,110 @@
+<ion-app>
+
+  <ion-header *ngIf="started">
+    <ion-toolbar color="primary">
+      <ion-title>Owner Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="slide" *ngIf="!started">
+    <ion-card color="primary">
+      <ion-card-header>
+        <ion-card-title>Welcome to Loop</ion-card-title>
+        <ion-card-subtitle class="text-orange">LoopServ</ion-card-subtitle>
+      </ion-card-header>
+
+      <div class="icon_holder">
+        <img class="icon" src="../../assets/goal.png">
+      </div>
+
+      <ion-card-content *ngIf="!started">
+        <ion-text>
+          You've successfully created your loop account. Just a few more steps and you'll be done
+          <ul>
+            <li>
+              <ion-text color="tertiary">Owner profile</ion-text>
+            </li>
+            <li>
+              <ion-text color="tertiary">Shop profile</ion-text>
+            </li>
+          </ul>
+
+        </ion-text>
+      </ion-card-content>
+
+      <ion-card-content>
+        <ion-button margin-top expand="full" color="tertiary" shape="round" (click)="getStarted()">Create Owner Profile</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-content *ngIf="started">
+
+    <ion-grid class="full-height">
+      <ion-row class="full-hieght">
+        <ion-col>
+          <div class="img-holder">
+            <img *ngIf="newSrc" (click)="showActionSheet()" [src]="newSrc? newSrc: ''">
+            <ion-icon *ngIf="!newSrc && !img_loading" class="upload" (click)="showActionSheet()" size="large" color="dark"
+              name="camera"></ion-icon>
+            <ion-spinner class="upload" name="bubbles" *ngIf="img_loading"></ion-spinner>
+          </div>
+
+          <form [formGroup]="form">
+            <ion-toolbar margin-top color="primary">
+              <ion-title>Personal details</ion-title>
+            </ion-toolbar>
+            <ion-item margin-top no-padding>
+              <ion-label position="stacked">First Name</ion-label>
+              <ion-input formControlName="first_name" type="text"></ion-input>
+            </ion-item>
+            <ion-item margin-top no-padding>
+              <ion-label position="stacked">Last Name</ion-label>
+              <ion-input formControlName="last_name" type="text"></ion-input>
+            </ion-item>
+            <ion-item margin-top no-padding>
+              <ion-label position="stacked">Email Address</ion-label>
+              <ion-input formControlName="email_address" type="email"></ion-input>
+            </ion-item>
+
+            <ion-toolbar margin-top color="primary">
+              <ion-title>Address</ion-title>
+            </ion-toolbar>
+            <ng-container formGroupName="address">
+
+
+              <ion-item margin-top no-padding>
+                <ion-label position="stacked">Building / Number</ion-label>
+                <ion-input formControlName="number" type="text"></ion-input>
+
+              </ion-item>
+
+              <ion-item margin-top no-padding>
+                <ion-label position="stacked">Street</ion-label>
+                <ion-input formControlName="street" type="text"></ion-input>
+              </ion-item>
+
+              <ion-item margin-top no-padding>
+                <ion-label position="stacked">Postcode</ion-label>
+                <ion-input formControlName="postcode" type="text"></ion-input>
+              </ion-item>
+
+              <ion-item margin-top no-padding>
+                <ion-label position="stacked">Country</ion-label>
+                <ion-input formControlName="country" type="text"></ion-input>
+              </ion-item>
+            </ng-container>
+
+            <ion-button margin-top [disabled]="loading" color="tertiary" expand="block" (click)="create()">Create</ion-button>
+
+          </form>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+
+
+
+
+</ion-app>

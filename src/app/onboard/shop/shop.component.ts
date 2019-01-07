@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../auth.service';
 import { LoadingController } from '@ionic/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.page.html',
-  styleUrls: ['./profile.page.scss']
+  selector: 'app-shop',
+  templateUrl: './shop.component.html',
+  styleUrls: ['./shop.component.scss']
 })
-export class ProfilePage implements OnInit {
+export class ShopComponent implements OnInit {
+
   main_loading: boolean;
   error;
   profile = {};
@@ -59,36 +60,5 @@ export class ProfilePage implements OnInit {
     this.as.signOut();
   }
 
-  // claim(){
-  //   this.loading = true;
-  //   this.ps.claimProfile(this.profile._id).subscribe(
-  //     data => {
-  //       console.log(data);
-  //       this.getToken();
-  //     },
-  //     error => {
-  //       console.log(error);
-  //       // this.presentLoadingWithOptions(error.message);
-  //       this.loading = false
-  //     }
-  //   )
-  // }
-
-  getToken(){
-    // this.ps.getToken().subscribe(
-    //   data => {
-    //     this.as.setRYLToken(data.token).then(
-    //       d => {
-    //         this.router.navigate(['/profile/requestcode']);
-    //       }
-    //     )
-        
-    //   },
-    //   error => {
-    //   }
-    // ).add(() => {
-    //   this.loading = false;
-    // })
-  }
 
 }

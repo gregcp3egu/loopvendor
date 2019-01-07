@@ -3,13 +3,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../auth.service';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { ProfileService } from '../../owner-profile/profile.service';
 // import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers: [ToastController]
+  providers: [ ToastController, ProfileService]
 })
 export class LoginComponent implements OnInit {
 
@@ -17,8 +18,10 @@ export class LoginComponent implements OnInit {
   loading: boolean;
 
   constructor(private fb: FormBuilder,
-    private as: AuthService, public toastController: ToastController,
-    private router: Router) {
+    private as: AuthService, 
+    public toastController: ToastController,
+    private router: Router,
+    private ps: ProfileService) {
     this.createForm();
   }
 
@@ -36,16 +39,16 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this.as.emailLogin(this.form.value.email, this.form.value.password).then(
       d => {
+        
         if (d.user.emailVerified) {
-
-          this.router.navigate(['/tabs'])
+          
+          this.router.navigate(['/onboard'])
 
         } else {
           this.presentToast('Please verify your email to use rate your leader');
           this.as.afAuth.auth.signOut();
           this.loading = false;
         }
-        this.loading = false;
 
       }
     ).catch(

@@ -1,0 +1,50 @@
+.img-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 240px;
+    min-width: 240px;
+}
+
+.img-holder img{
+    height: 240px;
+    width: 240px;
+    border-radius: 100%;
+}
+
+.icon_holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon{
+    height: 200px;
+    width: 200px;
+}
+
+.pro{
+    width: 250px;
+    height: 250px;
+    border-radius: 100%;
+    margin: auto;
+}
+
+.img-holder{
+    display: flex;
+}
+
+.icon{
+    height: 230px;
+    width: 230px;
+    margin: auto;
+}
+
+:host .slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+

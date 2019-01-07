@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyCaMCW6XX_ucnr4eHqzuroyY6liRefBWIM",
-    authDomain: "loop-shopper.firebaseapp.com",
-    databaseURL: "https://loop-shopper.firebaseio.com",
-    projectId: "loop-shopper",
-    storageBucket: "loop-shopper.appspot.com",
-    messagingSenderId: "1088045880616"
+    apiKey: "AIzaSyBusyYojvCpsXI8ytUgbu4fE6b4phZaj98",
+    authDomain: "loop-ac961.firebaseapp.com",
+    databaseURL: "https://loop-ac961.firebaseio.com",
+    projectId: "loop-ac961",
+    storageBucket: "loop-ac961.appspot.com",
+    messagingSenderId: "92836513928"
   }
 };
